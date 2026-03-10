@@ -7,7 +7,7 @@ import React, { useState, useMemo, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Text, Float, ContactShadows, Html } from '@react-three/drei';
 import * as THREE from 'three';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Thermometer, Gauge, Zap, Info, Maximize2, Move, Box, Ruler } from 'lucide-react';
 
 // --- Constants ---
@@ -140,7 +140,7 @@ const MeasurementLabel = ({ start, end, label, color }: { start: THREE.Vector3, 
         <lineBasicMaterial attach="material" color={color} linewidth={2} />
       </line>
       <Html position={mid} center>
-        <div className="bg-black/80 text-[8px] px-1 py-0.5 rounded border border-white/20 whitespace-nowrap font-mono text-white pointer-events-none">
+        <div className="bg-black/80 text-[12px] px-2 py-1 rounded border border-white/20 whitespace-nowrap font-mono text-white pointer-events-none shadow-lg">
           {label}
         </div>
       </Html>
